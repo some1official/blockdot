@@ -20,7 +20,7 @@ o = 14 #as1
 p = 15 #jf4
 q = 16 #ek2
 r = 17 #mv3
-s = 18 # bk9
+s = 18 #bk9
 t = 19 #kbf
 u = 20 #jsm
 v = 21 #ibm
@@ -45,7 +45,7 @@ L = 37 #nbs
 M = 38 #sfa
 N = 39 #dpa
 O = 40 #mid
-P = 41 #mid
+P = 41 #a53
 Q = 42 #8gm
 R = 43 #jb7
 S = 44 #yus
@@ -54,11 +54,11 @@ U = 46 #abd
 V = 47 #7a3
 W = 48 #75a
 X = 49 #92r
-Y = 50 #m8a
+Y = 50 #m89
 Z = 51 #mao
 
 #Digits Characters
-zero = 52 #kms
+zero = 52 #k34
 one = 53 #lks
 two = 54 #vhd
 three = 55 #meb
@@ -70,7 +70,7 @@ eight = 60 #yfs
 nine = 61 #kms
 
 #Other Characters
-question_mark = 63 #m8s
-space = 64 #mav
-exclamation_mark = 65 #lsa
-dot = 66 #m8a
+question_mark = 62 #m8s
+space = 63 #mav
+exclamation_mark = 64 #lsa
+dot = 65 #m8a
