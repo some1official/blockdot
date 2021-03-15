@@ -14,7 +14,7 @@ class bopen:
                 open(self.file_name, "x")
                 self.open_type_id = "x"
             except IOError:
-                raise ErrorMessage(f"Blockdot: File Already Exists ({self.file_name})")
+                raise ErrorMessage(f"Blockdot: File Already Exists (\"{self.file_name}\")")
 
         elif(self.open_type=="1" or self.open_type=="write"):
             open(self.file_name, "a")
@@ -24,7 +24,7 @@ class bopen:
             open(self.file_name, "a")
             self.open_type_id = "a"
         else:
-            raise ErrorMessage(f"Blockdot: The Open Type is invalid! ({self.open_type})")
+            raise ErrorMessage(f"Blockdot: The Open Type is invalid! (\"{self.open_type}\")")
 
 
     def write(self, string):
@@ -35,9 +35,34 @@ class bopen:
         f = open(self.file_name, self.open_type_id)
         f.close
 
+    def read(self, number=-1):
+        f = open(self.file_name, "r")
+        
+        if(number==-1):
+            print(f.read())
+        else:
+            print(f.read(number))
 
+    def readline(self, number=-1):
+        f = open(self.file_name, "r")
 
-f = bopen("test.txt", "append")
-f.write("Something\n")
-f.write("something")
-f.write("something")
+        if(number==-1):
+            print(f.readline())
+        else:
+            print(f.readline(number))
+
+    def lines(self): #returns the numbers of lines in the file
+        number_of_lines = len(open(self.file_name).readlines())
+        return number_of_lines
+
+    def characters(self, arg="None"): #returns the numbers of characters in the file
+        
+        arg = str(arg)
+        if(arg == "None"):
+            number_of_characters = len(open(self.file_name, "r").read())
+            return number_of_characters
+        elif(arg == "nospace"):
+            number_of_characters = len(open(self.file_name, "r").read().replace(" ","").replace("\n",""))
+            return number_of_characters
+        else:
+            raise ErrorMessage(f"Blockdot: Invalid Extra Argument (\"{arg}\")")
