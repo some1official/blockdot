@@ -1,3 +1,7 @@
+March 16 2021:
+Changed the function name encrypt_string() to encrypt()
+Added a new category [passwords] with 2 new functions [generate_password(), check_password()]
+
 March 15 2021:
 Added 4 functions that can be used for file handling:
 read(), readline(), lines(), characters()
