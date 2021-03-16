@@ -69,9 +69,25 @@ class fopen:
             raise ErrorMessage(f"Blockdot: Invalid Extra Argument (\"{arg}\")")
 
     
-def fdelete(string):
+#delete a file or a string
+def fdelete(string, arg = "file"):
     string = str(string) #converts the given variable 'string' to a string
-    if os.path.exists(string):
-        os.remove(string)
-    else:
-        raise ErrorMessage(f"Blockdot: File does not exists (\"{string}\")")
+    arg = str(arg) #converts the argument in a string
+    
+    #deletes a file
+    if(arg=="file"):
+
+        #deletes the file
+        if os.path.exists(string):
+            os.remove(string)
+        else: #if the file doesn't exists it returns a Error Message
+            raise ErrorMessage(f"Blockdot: File does not exists (\"{string}\")")
+    
+    #deletes a folder
+    elif(arg=="folder"):
+        try: #tries to delete the folder
+            os.rmdir(string)
+        except IOError: #if the folder doesn't exists it returns a Error Message
+            raise ErrorMessage(f"Blockdot: Folder does not exists (\"{string}\")")
+    else: #if the argument given is invalid it returns a Error Message
+        raise ErrorMessage(f"Blockdot: Invalid Argument (\"{arg}\")")
