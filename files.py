@@ -1,9 +1,10 @@
 import string
+import os
 
 class ErrorMessage(Exception):
     pass
 
-class bopen:
+class fopen:
 
     def __init__(self, ffile_name, oopen_type):
         self.file_name = str(ffile_name)
@@ -66,3 +67,11 @@ class bopen:
             return number_of_characters
         else:
             raise ErrorMessage(f"Blockdot: Invalid Extra Argument (\"{arg}\")")
+
+    
+def fdelete(string):
+    string = str(string) #converts the given variable 'string' to a string
+    if os.path.exists(string):
+        os.remove(string)
+    else:
+        raise ErrorMessage(f"Blockdot: File does not exists (\"{string}\")")
