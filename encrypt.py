@@ -2,7 +2,7 @@ import string
 from src.translate import translate_to_id, translate_encrypt
 
 #encrypts a strings
-def encrypt_string(string):
+def encrypt(string):
     n = len(string)
     enctrypted_string = ""
     for i in range(0,n):
