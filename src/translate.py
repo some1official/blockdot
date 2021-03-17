@@ -1,5 +1,5 @@
 import string
-from alphabet import *
+from src.alphabet import * 
 
 #translates characters to id
 def translate_to_id(char):
